@@ -4,7 +4,6 @@ import Timer from './Timer'
 
 class App extends Component {
 
-  //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
   }
@@ -54,6 +53,10 @@ class App extends Component {
     this.setState(prevState => ({
       timerIDs: prevState.timerIDs.filter(timer_id => timer_id !== id)
     }))
+  }
+
+  componentDidMount() {
+    this.handleAddTimer()
   }
 
 
